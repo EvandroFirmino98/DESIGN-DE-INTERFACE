@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    <form name="op" action="">
+        <label for="valor1">Primeiro Valor</label>
+        <input type="text" name="valor1" id="valor1">
+        <br><br>
+        <label for="op">Operação: </label>
+        <select name="sinal" id="sinal">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <br><br>
+        <label for="valor2">Segundo Valor</label>
+        <input type="text" name="valor2" id="valor2">
+        <br>
+        <br>
+        <label for="Resultado">Resultado</label>
+        <input type="text" name="Resultado" id="Resultado">
+        <br><br>
+        <input type="button" value="Resultado" onclick="calcular()">
+    </form>
+    <script>
+        function calcular(Operação) {
+            var valor1 = parseInt(document.getElementById("valor1").value);
+            var valor2 = parseInt(document.getElementById("valor2").value);
+            var sinal  = document.getElementById("sinal").value;
+            var Resultado = document.getElementById("Resultado");
+
+            if(sinal == "+") Resultado.value = valor1 + valor2;
+            if(sinal == "-") Resultado.value = valor1 - valor2;
+            if(sinal == "*") Resultado.value = valor1 * valor2;
+            if(sinal == "/") Resultado.value = valor1 / valor2;  
+        }
+    </script>
+</body>
+</html>
